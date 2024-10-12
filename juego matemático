@@ -1,0 +1,67 @@
+import random
+
+def generar_operacion(tipo):
+    if tipo == 1:  # Suma
+        a = random.randint(1, 10)
+        b = random.randint(1, 10)
+        resultado = a + b
+        operacion = f"{a} + {b} = ?"
+    elif tipo == 2:  # Resta
+        a = random.randint(1, 10)
+        b = random.randint(1, 10)
+        resultado = a - b
+        operacion = f"{a} - {b} = ?"
+    elif tipo == 3:  # Multiplicación
+        a = random.randint(1, 10)
+        b = random.randint(1, 10)
+        resultado = a * b
+        operacion = f"{a} * {b} = ?"
+    elif tipo == 4:  # División
+        b = random.randint(1, 10)
+        resultado = random.randint(1, 10)
+        a = b * resultado
+        operacion = f"{a} / {b} = ?"
+    elif tipo == 5:  # Aleatorio
+        tipo_aleatorio = random.randint(1, 4)
+        return generar_operacion(tipo_aleatorio)
+    
+    return operacion, resultado
+
+def juego():
+    while True:
+        print("Elige el tipo de operación:")
+        print("1. Suma")
+        print("2. Resta")
+        print("3. Multiplicación")
+        print("4. División")
+        print("5. Aleatorio")
+        
+        tipo_operacion = int(input("Selecciona el número de la operación: "))
+
+        if tipo_operacion not in [1, 2, 3, 4, 5]:
+            print("Operación no válida, elige de nuevo.")
+            continue
+        
+        aciertos = 0
+
+        while aciertos < 10:
+            operacion, resultado = generar_operacion(tipo_operacion)
+            print(operacion)
+            respuesta = int(input("Tu respuesta: "))
+
+            if respuesta == resultado:
+                aciertos += 1
+                print(f"¡Correcto! Has acertado {aciertos} de 10.")
+            else:
+                aciertos = 0
+                print("¡Incorrecto! Debes empezar de nuevo.")
+        
+        print("¡Felicidades! Has completado 10 respuestas correctas seguidas.")
+        
+        seguir_jugando = input("¿Deseas seguir jugando? (s/n): ").lower()
+        if seguir_jugando != 's':
+            print("Gracias por jugar. ¡Hasta la próxima!")
+            break
+
+# Ejecutar el juego
+juego()
