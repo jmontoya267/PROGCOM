@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación Ejecutiva - Proyecto SOLUNION</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Styles -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e5e7eb;
+        }
+        .slide-container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+        .slide {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 1200px;
+            height: 90%;
+            max-height: 700px;
+            opacity: 0;
+            transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .slide.active {
+            opacity: 1;
+            z-index: 10;
+        }
+        .nav-button {
+            transition: all 0.2s ease-in-out;
+            background-color: #2563eb;
+        }
+        .nav-button:hover {
+            background-color: #1e40af;
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #1f2937;
+        }
+        .highlight {
+            color: #2563eb;
+            font-weight: 700;
+        }
+        .bg-pattern {
+            background-image: radial-gradient(#d1d5db 1px, transparent 1px), radial-gradient(#d1d5db 1px, transparent 1px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+        }
+        .card {
+            background-color: #f3f4f6;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Presentation Container -->
+    <div class="slide-container relative bg-pattern">
+
+        <!-- Slide 1: Título -->
+        <div id="slide-1" class="slide active">
+            <div class="text-center">
+                <h1 class="text-6xl font-extrabold text-gray-900 mb-4 animate-fade-in-up">Proyecto de Cobertura de Cartera</h1>
+                <p class="text-2xl text-gray-600 font-medium">Análisis y Estrategia para el Segundo Semestre</p>
+                <div class="mt-8 flex justify-center items-center space-x-4">
+                    <span class="text-lg font-semibold text-blue-600">SOLUNION</span>
+                    <div class="w-1 h-8 bg-blue-600 rounded-full"></div>
+                    <span class="text-lg font-semibold text-gray-500">Presentación Ejecutiva</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Resumen Ejecutivo -->
+        <div id="slide-2" class="slide hidden">
+            <h2 class="text-4xl font-bold text-blue-700 mb-8 border-b-2 border-blue-200 pb-2">Resumen Ejecutivo</h2>
+            <div class="grid md:grid-cols-3 gap-8 text-xl text-gray-700">
+                <div class="card">
+                    <h3 class="font-bold text-gray-900 mb-2">Objetivo Principal</h3>
+                    <p>Fortalecer la gestión de cartera y <span class="highlight">mitigar el riesgo de incobrabilidad</span>.</p>
+                </div>
+                <div class="card">
+                    <h3 class="font-bold text-gray-900 mb-2">Análisis Estratégico</h3>
+                    <p>Revisión de ventas por canal para definir una <span class="highlight">estrategia de cobertura sólida</span>.</p>
+                </div>
+                <div class="card">
+                    <h3 class="font-bold text-gray-900 mb-2">Oportunidades de Mejora</h3>
+                    <p>Identificación de puntos críticos en procesos de <span class="highlight">legalización y verificación</span>.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Análisis de Ventas (Enero - Julio) -->
+        <div id="slide-3" class="slide hidden">
+            <h2 class="text-4xl font-bold text-blue-700 mb-8 border-b-2 border-blue-200 pb-2">Análisis de Ventas (Ene - Jul)</h2>
+            <div class="grid md:grid-cols-4 gap-8 text-center text-xl text-gray-700">
+                <div class="card">
+                    <h3 class="font-bold text-gray-900 mb-2">Ventas Base</h3>
+                    <p class="text-3xl highlight">$124.035M</p>
+                    <p class="text-gray-500">69.53% de participación</p>
+                </div>
+                <div class="card">
+                    <h3 class="font-bold text-gray-900 mb-2">Ventas TAT</h3>
+                    <p class="text-3xl text-gray-800">$29.410M</p>
+                    <p class="text-gray-500">16.48% de participación</p>
+                </div>
+                <div class="card">
+                    <h3 class="font-bold text-gray-900 mb-2">Ventas CI</h3>
+                    <p class="text-3xl text-gray-800">$24.925M</p>
+                    <p class="text-gray-500">13.97% de participación</p>
+                </div>
+                <div class="card">
+                    <h3 class="font-bold text-gray-900 mb-2">Promedio Mensual</h3>
+                    <p class="text-3xl text-gray-800">$25.481M</p>
+                    <p class="text-gray-500">Total de Ventas</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Criterios para la Cobertura -->
+        <div id="slide-4" class="slide hidden">
+            <h2 class="text-4xl font-bold text-blue-700 mb-8 border-b-2 border-blue-200 pb-2">Criterios de Cobertura</h2>
+            <p class="text-2xl text-gray-700 mb-6">Priorizamos clientes de alto riesgo y con alertas. Otros factores clave:</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center text-gray-700">
+                <div class="card p-6">
+                    <p class="font-bold text-lg mb-2">Mayor Volumen de Compra</p>
+                </div>
+                <div class="card p-6">
+                    <p class="font-bold text-lg mb-2">Pagos Fuera de Plazo</p>
+                </div>
+                <div class="card p-6">
+                    <p class="font-bold text-lg mb-2">Clientes Nuevos</p>
+                </div>
+                <div class="card p-6">
+                    <p class="font-bold text-lg mb-2">Problemas de Documentación</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Clientes a Cubrir -->
+        <div id="slide-5" class="slide hidden">
+            <h2 class="text-4xl font-bold text-blue-700 mb-8 border-b-2 border-blue-200 pb-2">Nuevos Clientes en Cobertura</h2>
+            <div class="grid md:grid-cols-2 gap-8 text-xl">
+                <div class="card">
+                    <h3 class="highlight font-bold mb-1">Megaredil</h3>
+                    <p>Alertas medias. Nuevo cupo: <span class="text-green-600">$450.000</span></p>
+                </div>
+                <div class="card">
+                    <h3 class="highlight font-bold mb-1">El Descuento</h3>
+                    <p>Alertas altas. Nuevo cupo: <span class="text-green-600">$300.000</span></p>
+                </div>
+                <div class="card">
+                    <h3 class="highlight font-bold mb-1">Merkadescuentos</h3>
+                    <p>Alto volumen. Nuevo cupo: <span class="text-green-600">$1.000.000</span></p>
+                </div>
+                <div class="card">
+                    <h3 class="highlight font-bold mb-1">Montes</h3>
+                    <p>Alto volumen. Nuevo cupo: <span class="text-green-600">$800.000</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Desafíos y Oportunidades -->
+        <div id="slide-6" class="slide hidden">
+            <h2 class="text-4xl font-bold text-blue-700 mb-8 border-b-2 border-blue-200 pb-2">Desafíos Clave</h2>
+            <ul class="list-disc list-inside space-y-4 text-xl text-gray-700 leading-relaxed">
+                <li><span class="highlight">Proceso de legalización</span> no definido.</li>
+                <li>Alcance del equipo de cartera en la verificación.</li>
+                <li>Optimización de la verificación con <span class="highlight">cargues de TAT</span>.</li>
+                <li>Asegurar el proceso de autorización de despachos.</li>
+            </ul>
+        </div>
+
+        <!-- Slide 7: Detalle de Cupos a Asegurar -->
+        <div id="slide-7" class="slide hidden">
+            <h2 class="text-4xl font-bold text-blue-700 mb-8 border-b-2 border-blue-200 pb-2">Detalle de Cupos Asegurados</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-xl text-center">
+                <div class="card"><span class="highlight">Megaredil:</span> $450.000</div>
+                <div class="card"><span class="highlight">El Descuento:</span> $200.000</div>
+                <div class="card"><span class="highlight">Merkadescuentos:</span> $1.000.000</div>
+                <div class="card"><span class="highlight">Montes:</span> $800.000</div>
+                <div class="card"><span class="highlight">Fexvad:</span> $300.000</div>
+                <div class="card"><span class="highlight">Cliente Nuevo JJP:</span> $300.000</div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Equipo de Cartera -->
+        <div id="slide-8" class="slide hidden">
+            <h2 class="text-4xl font-bold text-blue-700 mb-8 border-b-2 border-blue-200 pb-2">Nuestro Equipo de Cartera</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-xl">
+                <div class="card"><span class="highlight">Zoraida Mendoza:</span> Recaudo (Cúcuta)</div>
+                <div class="card"><span class="highlight">Viviana Santos:</span> Aprobación & Recaudo (Bucaramanga)</div>
+                <div class="card"><span class="highlight">Lesly Correa:</span> Aprobación & Recaudo (Duitama)</div>
+                <div class="card bg-blue-100 text-blue-800">
+                    <p class="font-bold">¡Bienvenida!</p>
+                    <p><span class="highlight">Paola</span> se une al equipo para la gestión de Mensuli.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Caso de Estudio (Fexvad) -->
+        <div id="slide-9" class="slide hidden">
+            <h2 class="text-4xl font-bold text-blue-700 mb-8 border-b-2 border-blue-200 pb-2">Caso de Estudio: Fexvad</h2>
+            <div class="flex items-center space-x-8">
+                <div class="w-1/2 p-6 bg-gray-100 rounded-lg">
+                    <p class="text-xl text-gray-700 mb-4"><span class="highlight">Situación:</span> Cliente con 10 días de cartera vencida, un cupo de $200M y un pedido de $100M.</p>
+                    <p class="text-xl text-gray-700 font-bold">¿Se aprueba el despacho del pedido?</p>
+                </div>
+                <div class="w-1/2 p-6 bg-red-100 rounded-lg">
+                    <p class="text-6xl font-extrabold text-red-700 text-center">NO</p>
+                    <p class="text-lg text-red-800 text-center mt-2">Según la política actual de la empresa.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 10: Conclusión y Proyección -->
+        <div id="slide-10" class="slide hidden">
+            <h2 class="text-4xl font-bold text-blue-700 mb-8 border-b-2 border-blue-200 pb-2">Próximos Pasos & Conclusiones</h2>
+            <ul class="list-disc list-inside space-y-4 text-xl text-gray-700 leading-relaxed">
+                <li>Construir <span class="highlight">planes de acción</span> para zonas de bajo rendimiento.</li>
+                <li>Definir procesos claros de legalización.</li>
+                <li>Establecer seguimiento para clientes con cartera vencida.</li>
+                <li>*Análisis Adicional:* La recuperación de <span class="highlight">ALTIPAL</span> en 2024 (Ganancia de $14M vs. Pérdida de -$9M en 2023) es un indicador de que las estrategias de eficiencia están funcionando, lo que respalda este tipo de iniciativas de gestión de cartera.</li>
+            </ul>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex space-x-6">
+            <button id="prevBtn" class="nav-button px-8 py-3 rounded-full text-white font-semibold shadow-lg disabled:opacity-50 disabled:cursor-not-allowed">Anterior</button>
+            <button id="nextBtn" class="nav-button px-8 py-3 rounded-full text-white font-semibold shadow-lg disabled:opacity-50 disabled:cursor-not-allowed">Siguiente</button>
+        </div>
+    </div>
+
+    <!-- JavaScript for Slideshow functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            let currentSlide = 0;
+
+            const showSlide = (index) => {
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+                    if (i === index) {
+                        slide.classList.add('active');
+                    }
+                });
+                updateButtons(index);
+            };
+
+            const updateButtons = (index) => {
+                prevBtn.disabled = index === 0;
+                nextBtn.disabled = index === slides.length - 1;
+            };
+
+            nextBtn.addEventListener('click', () => {
+                if (currentSlide < slides.length - 1) {
+                    currentSlide++;
+                    showSlide(currentSlide);
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    showSlide(currentSlide);
+                }
+            });
+
+            showSlide(currentSlide);
+        });
+    </script>
+</body>
+</html>
